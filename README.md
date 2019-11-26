@@ -17,6 +17,20 @@
 
 为了避免跨境网络不稳定导致安装失败，建议先做好Yum Repo和Redhat Docker registry的本地镜像。 详细步骤参见[OpenShift文档](https://docs.openshift.com/container-platform/3.10/install/disconnected_install.html)。
 
+由于QuickStart包括对Glusterfs的支持，需要下载两个额外的repo:
+
+- rhel-7-fast-datapath-rpms
+- rh-gluster-3-client-for-rhel-7-server-rpms
+
+```bash
+subscription-manager repos --enable="rhel-7-server-rpms" \
+    --enable="rhel-7-server-extras-rpms" \
+    --enable="rhel-7-server-ose-3.10-rpms" \
+    --enable="rhel-7-fast-datapath-rpms" \
+    --enable="rhel-7-server-ansible-2.4-rpms" \
+    --enable="rh-gluster-3-client-for-rhel-7-server-rpms"
+```
+
 ### 使用CloudFormation模板部署OpenShift
 
 您可以使用CloudFormation便捷的部署这个集群。
