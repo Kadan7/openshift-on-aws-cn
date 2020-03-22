@@ -1,0 +1,1 @@
+# Red Hat OpenShift Container Platform v4 on AWS China
