@@ -11,7 +11,7 @@
 
 ### 建立VPC网络环境
 
-您可以使用现有VPC，或者新建VPC. 需要包含3个公有子网，3个私有子网, Internet Gateway和NAT Gateway。 私有子网可通过NAT Gateway访问internet。
+您可以使用现有VPC，或者新建VPC. 需要包含3个公有子网，3个私有子网, Internet Gateway和NAT Gateway。 私有子网可通过NAT Gateway访问internet。VPC需要打开DNS Hostname.
 
 ### 准备本地Yum Repo和Docker镜像
 
