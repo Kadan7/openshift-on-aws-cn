@@ -433,5 +433,3 @@ v4.3中cloud-credential-operator和ingress-operator对AWS中国区的支持还�
 * 使用fix版本。 
 
 
-## 13. 新建MachineSet，部署Machine Autoscaler
-
