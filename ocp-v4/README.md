@@ -43,7 +43,28 @@ export AWS_DEFAULT_PROFILE=china
 
 ```
 
-## 3. 新建本地镜像实例
+## 3. 下载安装程序，生成ssh key
+
+用Red Hat账号登录[Infrastructure Provider](https://cloud.redhat.com/openshift/install), infrastructure provider选择AWS，安装方式选择user-provisioned infrastructure。
+
+下载对应镜像版本和你的操作系统的OpenShift installer，在同一个页面下载pull secret和Command-line interface。
+
+选择您将用来登录集群的ssh key。如果您还没有ssh key，可以用下面的命令生成。
+
+```bash
+ssh-keygen -t rsa -b 4096 -N '' -f <path>/<file_name>
+```
+
+指明生成的key的位置，例如"~/.ssh/id_rsa"。 
+
+并将ssh key加载到ssh agent中。 
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add <path>/<file_name>
+```
+
+## 4. 新建本地镜像实例
 
 由于跨境网络原因，导致OCP安装从Quay.io上下载容器镜像时非常缓慢，为了保证安装能够顺利完成，需要先制作离线的本地镜像库。
 
@@ -96,27 +117,6 @@ export AWS_DEFAULT_PROFILE=china
 - mirrors:
   - ip-10-0-11-240.cn-northwest-1.compute.internal:5000/ocp4/openshift4
   source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
-```
-
-## 4. 下载安装程序，生成ssh key
-
-用Red Hat账号登录[Infrastructure Provider](https://cloud.redhat.com/openshift/install), infrastructure provider选择AWS，安装方式选择user-provisioned infrastructure。
-
-下载对应镜像版本和你的操作系统的OpenShift installer，在同一个页面下载pull secret和Command-line interface。
-
-选择您将用来登录集群的ssh key。如果您还没有ssh key，可以用下面的命令生成。
-
-```bash
-ssh-keygen -t rsa -b 4096 -N '' -f <path>/<file_name>
-```
-
-指明生成的key的位置，例如"~/.ssh/id_rsa"。 
-
-并将ssh key加载到ssh agent中。 
-
-```bash
-eval "$(ssh-agent -s)"
-ssh-add <path>/<file_name>
 ```
 
 ## 5. 生成Kubernetes manifest和ignition文件
