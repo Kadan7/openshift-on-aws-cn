@@ -1,0 +1,17 @@
+{
+  "Comment": "create wildcard record set for *.apps.myocpcluster.awsose.cc",
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "*.apps.myocpcluster.awsose.cc",
+        "Type": "A",
+        "AliasTarget": {
+          "HostedZoneId": "ZM7IZAIOVVDZF",
+          "DNSName": "a80fd91ce97f246a4bcdf1f5b9983469-1415112155.cn-northwest-1.elb.amazonaws.com.cn",
+          "EvaluateTargetHealth": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+    {
+      "ParameterKey": "ClusterName", 
+      "ParameterValue": "myocpcluster" 
+    },
+    {
+      "ParameterKey": "InfrastructureName", 
+      "ParameterValue": "myocpcluster-2gj72" 
+    },
+    {
+      "ParameterKey": "HostedZoneId", 
+      "ParameterValue": "Z082501217A9HD7UGTHCT" 
+    },
+    {
+      "ParameterKey": "HostedZoneName", 
+      "ParameterValue": "awsose.cc" 
+    },
+    {
+      "ParameterKey": "PublicSubnets", 
+      "ParameterValue": "subnet-0f78f53af9b3a4024,subnet-0bd1a53563caec5f4,subnet-0ec4e521c60d91a81" 
+    },
+    {
+      "ParameterKey": "PrivateSubnets", 
+      "ParameterValue": "subnet-0beb06bfed4c8b156,subnet-0e5d74c805c7750b7,subnet-05ccfb84cd4babbed" 
+    },
+    {
+      "ParameterKey": "VpcId", 
+      "ParameterValue": "vpc-03e46744c3dac575d" 
+    }
+  ]

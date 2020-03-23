@@ -1,0 +1,18 @@
+[
+    {
+      "ParameterKey": "InfrastructureName", 
+      "ParameterValue": "myocpcluster-2gj72" 
+    },
+    {
+      "ParameterKey": "VpcCidr", 
+      "ParameterValue": "10.0.0.0/16" 
+    },
+    {
+      "ParameterKey": "PrivateSubnets", 
+      "ParameterValue": "subnet-0beb06bfed4c8b156,subnet-0e5d74c805c7750b7,subnet-05ccfb84cd4babbed" 
+    },
+    {
+      "ParameterKey": "VpcId", 
+      "ParameterValue": "vpc-03e46744c3dac575d" 
+    }
+  ]

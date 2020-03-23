@@ -1,0 +1,1 @@
+下载OpenShift安装程序，解压后，把openshift-install复制到这个目录。详见[项目说明](../README.md)

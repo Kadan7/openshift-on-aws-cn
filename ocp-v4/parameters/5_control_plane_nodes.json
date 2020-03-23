@@ -1,0 +1,74 @@
+[
+    {
+      "ParameterKey": "InfrastructureName", 
+      "ParameterValue": "myocpcluster-2gj72" 
+    },
+    {
+      "ParameterKey": "RhcosAmi", 
+      "ParameterValue": "ami-0e45959902075ffb5" 
+    },
+    {
+      "ParameterKey": "AutoRegisterDNS", 
+      "ParameterValue": "yes" 
+    },
+    {
+      "ParameterKey": "PrivateHostedZoneId", 
+      "ParameterValue": "/hostedzone/Z08654981ETKQN622JNEJ" 
+    },
+    {
+      "ParameterKey": "PrivateHostedZoneName", 
+      "ParameterValue": "myocpcluster.awsose.cc"
+    },
+    {
+      "ParameterKey": "Master0Subnet", 
+      "ParameterValue": "subnet-0beb06bfed4c8b156" 
+    },
+    {
+      "ParameterKey": "Master1Subnet", 
+      "ParameterValue": "subnet-0e5d74c805c7750b7" 
+    },
+    {
+      "ParameterKey": "Master2Subnet", 
+      "ParameterValue": "subnet-05ccfb84cd4babbed" 
+    },
+    {
+      "ParameterKey": "MasterSecurityGroupId", 
+      "ParameterValue": "sg-0169ab8a58ad5f532" 
+    },
+    {
+      "ParameterKey": "IgnitionLocation", 
+      "ParameterValue": "https://api-int.myocpcluster.awsose.cc:22623/config/master" 
+    },
+    {
+      "ParameterKey": "CertificateAuthorities", 
+      "ParameterValue": "data:text/plain;charset=utf-8;base64,LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lJZTNKVmdsTm1iYXN3RFFZSktvWklodmNOQVFFTEJRQXdKakVTTUJBR0ExVUUKQ3hNSmIzQmxibk5vYVdaME1SQXdEZ1lEVlFRREV3ZHliMjkwTFdOaE1CNFhEVEl3TURNeU1qRTNNVEExT0ZvWApEVE13TURNeU1ERTNNVEExT0Zvd0pqRVNNQkFHQTFVRUN4TUpiM0JsYm5Ob2FXWjBNUkF3RGdZRFZRUURFd2R5CmIyOTBMV05oTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFwcjJuR29vTml0WkkKcTdhWGl3YUNBUXNrRHUrUTN4emREemY3REpKYWxhVmg4SUVtOGtMVVp2NDQ2R0Q5LzlXcHFlZTdKa3hsaUh0agpsOFdBZWpXMktUd2ZMelp6eFdmKzZCYVR5TXZ6TS82SDV0S3ArZE5YWS9yRGNtd3Zib1duc1o5cHhGSDhmK3dnCkF3dXF2RG90dHd3b05LbktQeTBvUjVJa1R3enVRdC9vWmtnVG1saUV0U3JuSWN5a2ppNys2OEtvOGlPMm5ISFAKOGk5eUN6c1A2OGlOdzdwTEFPZnBtL0RYNEpWZWlBQzRycUVwQ21nT3htd0J2VGRYa2VWMzNPTWVsb3FVY05mMwpxa24ra2xWWjF6NEhWbzRnSnp4cFJlN3Z2K1RlUEl2MWtJdHpGNUZGZG84VVJOdE5ZdEhPeXJGSXBnMG5MZ2dqCnYvTm1wZnAyNHdJREFRQUJvMEl3UURBT0JnTlZIUThCQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWNTYWpldHcvQWRXaC9iWVpuN1RYN0lPNkd6SXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUpZNlphcWk3MG55TWkzeTIyTjI1R3NyenVVYzcycitoWmZuMDJ5ZUpZRWJ3dHZZRkxBOUpNSVVUVW9JCllYcm9SbnBBNXJGRVVCUGNsV1FmQklRWHNhejNJL2RGTWdpVnNaVFdSNEM5Uko2d1p4cEU4RzNGMGpESDNaMlMKRnR6K3VkekZ2NU02L1Nwb1YrNTFRNGdBWm9qR1NrVjZsOFVWWXI4N2xZcnBHSld6eUxOVzZmd2hUOGgrSUUwaApWdndBbFg1OEk3bEdkdXU0cFJ4alVBUDlUWVV2M0RFa25XQUJKb3ZRdlJ3VFR6bW5LNUh5OG5oVjQzSVJ4WEdNCngwTW83TldaSnNTRy9EQU9scnB2WUJvdXQ5V1QyVFh1TTJVZ3NlZzl3TlV4N3VPMUVjQmR3QmRTNDhwbWVvTFUKbkRXOWJkV3dzR1BNTDNaREZubnBuZTJ2ZEN3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==" 
+    },
+    {
+      "ParameterKey": "MasterInstanceProfileName", 
+      "ParameterValue": "myocpcluster-sg-MasterInstanceProfile-1AYEWJGDU3PJJ" 
+    },
+    {
+      "ParameterKey": "MasterInstanceType", 
+      "ParameterValue": "m4.xlarge" 
+    },
+    {
+      "ParameterKey": "AutoRegisterELB", 
+      "ParameterValue": "yes" 
+    },
+    {
+      "ParameterKey": "RegisterNlbIpTargetsLambdaArn", 
+      "ParameterValue": "arn:aws-cn:lambda:cn-northwest-1:215043275130:function:myocpcluster-elb-dns-RegisterNlbIpTargets-DN3TD6OGWT3Z" 
+    },
+    {
+      "ParameterKey": "ExternalApiTargetGroupArn", 
+      "ParameterValue": "arn:aws-cn:elasticloadbalancing:cn-northwest-1:215043275130:targetgroup/myocp-Exter-1OAQ1J1A8B3H7/f0c9c219666e060c" 
+    },
+    {
+      "ParameterKey": "InternalApiTargetGroupArn", 
+      "ParameterValue": "arn:aws-cn:elasticloadbalancing:cn-northwest-1:215043275130:targetgroup/myocp-Inter-12OJ3XV9NVJL8/1a32d8d6ccc48af6" 
+    },
+    {
+      "ParameterKey": "InternalServiceTargetGroupArn", 
+      "ParameterValue": "arn:aws-cn:elasticloadbalancing:cn-northwest-1:215043275130:targetgroup/myocp-Inter-1MGUX7CMCCVY7/2826d0692b81ea00" 
+    }
+  ]

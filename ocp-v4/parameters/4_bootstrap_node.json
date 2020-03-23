@@ -1,0 +1,50 @@
+[
+    {
+      "ParameterKey": "InfrastructureName", 
+      "ParameterValue": "myocpcluster-2gj72" 
+    },
+    {
+      "ParameterKey": "RhcosAmi", 
+      "ParameterValue": "ami-0e45959902075ffb5" 
+    },
+    {
+      "ParameterKey": "AllowedBootstrapSshCidr", 
+      "ParameterValue": "0.0.0.0/0" 
+    },
+    {
+      "ParameterKey": "PublicSubnet", 
+      "ParameterValue": "subnet-0f78f53af9b3a4024" 
+    },
+    {
+      "ParameterKey": "MasterSecurityGroupId", 
+      "ParameterValue": "sg-0169ab8a58ad5f532" 
+    },
+    {
+      "ParameterKey": "VpcId", 
+      "ParameterValue": "vpc-03e46744c3dac575d" 
+    },
+    {
+      "ParameterKey": "BootstrapIgnitionLocation", 
+      "ParameterValue": "s3://myocpcluster-cn-northwest-1/myocpcluster-2gj72/bootstrap.ign"
+    },
+    {
+      "ParameterKey": "AutoRegisterELB", 
+      "ParameterValue": "yes" 
+    },
+    {
+      "ParameterKey": "RegisterNlbIpTargetsLambdaArn", 
+      "ParameterValue": "arn:aws-cn:lambda:cn-northwest-1:215043275130:function:myocpcluster-elb-dns-RegisterNlbIpTargets-DN3TD6OGWT3Z" 
+    },
+    {
+      "ParameterKey": "ExternalApiTargetGroupArn", 
+      "ParameterValue": "arn:aws-cn:elasticloadbalancing:cn-northwest-1:215043275130:targetgroup/myocp-Exter-1OAQ1J1A8B3H7/f0c9c219666e060c" 
+    },
+    {
+      "ParameterKey": "InternalApiTargetGroupArn", 
+      "ParameterValue": "arn:aws-cn:elasticloadbalancing:cn-northwest-1:215043275130:targetgroup/myocp-Inter-12OJ3XV9NVJL8/1a32d8d6ccc48af6" 
+    },
+    {
+      "ParameterKey": "InternalServiceTargetGroupArn", 
+      "ParameterValue": "arn:aws-cn:elasticloadbalancing:cn-northwest-1:215043275130:targetgroup/myocp-Inter-1MGUX7CMCCVY7/2826d0692b81ea00" 
+    }
+  ]
