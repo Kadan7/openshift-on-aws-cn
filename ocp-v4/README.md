@@ -426,13 +426,11 @@ ip-10-0-89-250.cn-northwest-1.compute.internal   Ready    master   88m   v1.16.2
 
 ## 12. 更新cloud-credential-operator和ingress-operator
 
-v4.3中cloud-credential-operator和ingress-operator对AWS中国区的支持还有些问题。需要更新为下面的版本。 
+v4.3中cloud-credential-operator和ingress-operator对AWS中国区的支持还有些问题。
 
-```bash
-
-
-
-```
+目前有两种处理方法。
+* 关闭cloud-credential-operator，手工新建IAM用户，并把AK/SK更新到对应的Secret中。
+* 使用fix版本。 
 
 
 ## 13. 新建MachineSet，部署Machine Autoscaler
