@@ -13,7 +13,7 @@
 
 首先需要在您用于运行安装程序的电脑上安装并配置aws cli。具体步骤请参考[AWS文档](https://docs.amazonaws.cn/cli/latest/userguide/cli-chap-install.html)。
 
-配置aws cli，添加两个profile：
+配置aws cli，添加两个profile. 详细步骤参考[aws cli文档](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-profiles.html).
 * global：配置AWS Global区域管理员的AK/SK，区域设置为ap-southeast-1.
 * china: 配置AWS中国区管理员的AK/SK，区域设置为cn-northwest-1.
 
