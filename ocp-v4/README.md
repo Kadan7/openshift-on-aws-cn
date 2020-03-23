@@ -17,7 +17,7 @@
 * global：配置AWS Global区域管理员的AK/SK，区域设置为ap-southeast-1.
 * china: 配置AWS中国区管理员的AK/SK，区域设置为cn-northwest-1.
 
-按照命令行json工具jq。具体步骤请参考[jq wiki](https://github.com/stedolan/jq/wiki/Installation)。
+安装命令行json工具jq。具体步骤请参考[jq wiki](https://github.com/stedolan/jq/wiki/Installation)。
 
 ## 2. 新建VPC
 
@@ -357,7 +357,7 @@ csr-zg5w8   11m   system:serviceaccount:openshift-machine-config-operator:node-b
 
 仔细确认CSR是来自集群的worker节点后，批准CSR。
 
-···bash
+```bash
 oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
 ```
 
