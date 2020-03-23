@@ -68,6 +68,9 @@ Resources:
         ToPort: 22623
         CidrIp: !Ref VpcCidr
       VpcId: !Ref VpcId
+      Tags:
+      - Key: Name
+        Value: !Sub ${AWS::StackName}-master-sg
 
   WorkerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -83,6 +86,9 @@ Resources:
         ToPort: 22
         CidrIp: !Ref VpcCidr
       VpcId: !Ref VpcId
+      Tags:
+      - Key: Name
+        Value: !Sub ${AWS::StackName}-worker-sg
 
   MasterIngressEtcd:
     Type: AWS::EC2::SecurityGroupIngress
