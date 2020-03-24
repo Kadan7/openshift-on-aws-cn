@@ -189,7 +189,7 @@ imageContentSources:
   source: quay.io/openshift-release-dev/ocp-release
 - mirrors:
   - <bastion_host_name>:5000/<repo_name>/release
-  source: registry.svc.ci.openshift.org/ocp/release
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
 
 ```
 
