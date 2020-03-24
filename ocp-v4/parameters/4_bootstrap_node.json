@@ -25,7 +25,7 @@
     },
     {
       "ParameterKey": "BootstrapIgnitionLocation", 
-      "ParameterValue": "s3://myocpcluster-cn-northwest-1/myocpcluster-2gj72/bootstrap.ign"
+      "ParameterValue": "s3://myocpcluster-myocpcluster-2gj72-cn-northwest-1/bootstrap.ign"
     },
     {
       "ParameterKey": "AutoRegisterELB", 
