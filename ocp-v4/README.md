@@ -19,7 +19,28 @@
 
 安装命令行json工具jq。具体步骤请参考[jq wiki](https://github.com/stedolan/jq/wiki/Installation)。
 
-## 2. 新建VPC
+## 2. 下载安装程序，生成ssh key
+
+用Red Hat账号登录[Infrastructure Provider](https://cloud.redhat.com/openshift/install), infrastructure provider选择AWS，安装方式选择user-provisioned infrastructure。
+
+下载对应镜像版本和你的操作系统的OpenShift installer，在同一个页面下载pull secret和Command-line interface。
+
+选择您将用来登录集群的ssh key。如果您还没有ssh key，可以用下面的命令生成。
+
+```bash
+ssh-keygen -t rsa -b 4096 -N '' -f <path>/<file_name>
+```
+
+指明生成的key的位置，例如"~/.ssh/id_rsa"。 
+
+并将ssh key加载到ssh agent中。 
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add <path>/<file_name>
+```
+
+## 3. 新建VPC
 
 设置CLUSTER_NAME环境变量. 
 
@@ -41,27 +62,6 @@ export AWS_DEFAULT_PROFILE=china
 
 ./scripts/1_create_vpc.sh
 
-```
-
-## 3. 下载安装程序，生成ssh key
-
-用Red Hat账号登录[Infrastructure Provider](https://cloud.redhat.com/openshift/install), infrastructure provider选择AWS，安装方式选择user-provisioned infrastructure。
-
-下载对应镜像版本和你的操作系统的OpenShift installer，在同一个页面下载pull secret和Command-line interface。
-
-选择您将用来登录集群的ssh key。如果您还没有ssh key，可以用下面的命令生成。
-
-```bash
-ssh-keygen -t rsa -b 4096 -N '' -f <path>/<file_name>
-```
-
-指明生成的key的位置，例如"~/.ssh/id_rsa"。 
-
-并将ssh key加载到ssh agent中。 
-
-```bash
-eval "$(ssh-agent -s)"
-ssh-add <path>/<file_name>
 ```
 
 ## 4. 新建本地镜像实例
@@ -159,6 +159,21 @@ export AWS_DEFAULT_PROFILE=global
 
 additionalTrustBundle: |
   -----BEGIN CERTIFICATE-----
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
   ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
   -----END CERTIFICATE-----
 
@@ -297,7 +312,7 @@ cat ${CLUSTER_NAME}/master.ign | jq -r .ignition.security.tls.certificateAuthori
 
 ```
 
-配置KUBECONFIG，用oc查看集群的nodes. 过一段时间可以看到集群的master节点已经ready。
+配置KUBECONFIG，用oc查看集群的nodes.
 
 ```bash
 export KUBECONFIG=${CLUSTER_NAME}/auth/kubeconfig 
@@ -429,7 +444,5 @@ ip-10-0-89-250.cn-northwest-1.compute.internal   Ready    master   88m   v1.16.2
 v4.3中cloud-credential-operator和ingress-operator对AWS中国区的支持还有些问题。
 
 目前有两种处理方法。
-* 关闭cloud-credential-operator，手工新建IAM用户，并把AK/SK更新到对应的Secret中。
-* 使用fix版本。 
-
-
+* 关闭cloud-credential-operator，手工新建IAM用户，并把AK/SK更新到对应的Secret中。操作步骤请参考[cloud-credential-operator文档](https://github.com/openshift/cloud-credential-operator/blob/master/docs/disabled-operator.md).
+* 使用hot fix版本。 
