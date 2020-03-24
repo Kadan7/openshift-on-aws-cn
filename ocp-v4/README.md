@@ -211,7 +211,7 @@ rm -f ${CLUSTER_NAME}/openshift/99_openshift-cluster-api_worker-machineset-*.yam
 编辑${CLUSTER_NAME}/manifests/cluster-scheduler-02-config.yml，把mastersSchedulable的值改为false.
 
 
-编辑${CLUSTER_NAME}/manifests/cluster-dns-02-config.yml文件，删除privateZone和publicZone部分。后面我们会单独添加ingress DNS记录。
+编辑${CLUSTER_NAME}/manifests/cluster-dns-02-config.yml文件，注释掉privateZone和publicZone部分。后面我们会单独添加ingress DNS记录。
 
 ```yaml
 apiVersion: config.openshift.io/v1
