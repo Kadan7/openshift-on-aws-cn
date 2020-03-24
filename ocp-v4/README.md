@@ -221,10 +221,10 @@ metadata:
   name: cluster
 spec:
   baseDomain: example.openshift.com
-  privateZone: 
-    id: mycluster-100419-private-zone
-  publicZone: 
-    id: example.openshift.com
+#  privateZone: 
+#    id: mycluster-100419-private-zone
+#  publicZone: 
+#    id: example.openshift.com
 status: {}
 ```
 
