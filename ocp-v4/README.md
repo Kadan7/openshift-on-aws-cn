@@ -334,7 +334,7 @@ ip-10-0-89-250.cn-northwest-1.compute.internal   Ready    master   34m   v1.16.2
 
 ## 10. 新建worker nodes
 
-更新parameters/6_worker_node{01, 02, 03}.json中的参数通过下面的命令获得CertificateAuthorities的值.
+更新parameters/6_worker_node{01, 02, 03}.json中的参数。通过下面的命令获得CertificateAuthorities的值.
 
 ```bash
 cat ${CLUSTER_NAME}/worker.ign | jq -r .ignition.security.tls.certificateAuthorities[].source
