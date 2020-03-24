@@ -153,7 +153,7 @@ export AWS_DEFAULT_PROFILE=global
 
 ```
 
-增加additionalTrustBundle部分。这部分的内容必须是第3步，新建本地镜像服务器所使用的CA证书文件的内容。示例如下： 
+增加additionalTrustBundle部分。这部分的内容必须是第4步，新建本地镜像服务器所使用的CA证书文件的内容。示例如下： 
 
 ```yaml
 
@@ -179,7 +179,7 @@ additionalTrustBundle: |
 
 ```
 
-添加imageContentSources部分。这个是第3步同步镜像内容后输出的信息。示例如下：
+添加imageContentSources部分。这个是第4步同步镜像内容后输出的信息。示例如下：
 
 ```yaml
 
