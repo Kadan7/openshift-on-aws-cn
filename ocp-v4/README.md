@@ -242,10 +242,10 @@ find ${CLUSTER_NAME} -type f -print0 | xargs -0 sed -i '' -e 's/ap-southeast-1/c
 ./bin/openshift-install create ignition-configs --dir=${CLUSTER_NAME}
 ```
 
-获取infrastructure ID
+获取InfrastructureName
 
 ```bash
-export InfraID=`jq -r .infraID ${CLUSTER_NAME}/metadata.json`
+export InfrastructureName=`jq -r .infraID ${CLUSTER_NAME}/metadata.json`
 ```
 
 
