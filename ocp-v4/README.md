@@ -298,7 +298,7 @@ export HostedZoneId=`aws route53 create-hosted-zone --name ${BASE_DOMAIN} --call
 
 ## 9. 新建control plane实例
 
-更新parameters/5_control_plane_node.json中的参数. 通过下面的命令获得CertificateAuthorities的值.
+更新parameters/5_control_plane_nodes.json中的参数. 通过下面的命令获得CertificateAuthorities的值.
 
 ```bash
 cat ${CLUSTER_NAME}/master.ign | jq -r .ignition.security.tls.certificateAuthorities[].source
