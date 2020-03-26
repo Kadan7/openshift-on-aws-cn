@@ -264,8 +264,13 @@ export AWS_DEFAULT_PROFILE=china
 export BASE_DOMAIN="example.com"
 export CURRENT_DATE=`date`
 export HostedZoneId=`aws route53 create-hosted-zone --name ${BASE_DOMAIN} --caller-reference "${CURRENT_DATE}" --endpoint-url=https://route53.amazonaws.com.cn | jq -r .HostedZone.Id`
+echo "name servers for this hosted zone: "
+aws route53 --endpoint-url https://route53.amazonaws.com.cn list-resource-record-sets --hosted-zone-id ${HostedZoneId} | jq -r .ResourceRecordSets[0].ResourceRecords[].Value
 
 ```
+
+下一步需要到你的域名注册商的网站上，把BASE_DOMAIN的name servers修改成上面输出的name servers. 具体的步骤请参考域名注册商的文档。
+
 
 更新parameters/2_elb_dns_params.json中的参数，运行下面的命令，新建ELB和DNS域名。
 
