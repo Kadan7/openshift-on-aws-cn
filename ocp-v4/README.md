@@ -262,8 +262,7 @@ export AWS_DEFAULT_PROFILE=china
 ```bash 
 
 export BASE_DOMAIN="example.com"
-export CURRENT_DATE=`date`
-export HostedZoneId=`aws route53 create-hosted-zone --name ${BASE_DOMAIN} --caller-reference "${CURRENT_DATE}" --endpoint-url=https://route53.amazonaws.com.cn | jq -r .HostedZone.Id`
+export HostedZoneId=`aws route53 create-hosted-zone --name ${BASE_DOMAIN} --caller-reference ${BASE_DOMAIN} --endpoint-url=https://route53.amazonaws.com.cn | jq -r .HostedZone.Id`
 echo "name servers for this hosted zone: "
 aws route53 --endpoint-url https://route53.amazonaws.com.cn list-resource-record-sets --hosted-zone-id ${HostedZoneId} | jq -r .ResourceRecordSets[0].ResourceRecords[].Value
 
