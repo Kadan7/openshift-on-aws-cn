@@ -5,7 +5,7 @@
     },
     {
       "ParameterKey": "RhcosAmi", 
-      "ParameterValue": "ami-0e45959902075ffb5" 
+      "ParameterValue": "ami-0f7a015fbc2899672" 
     },
     {
       "ParameterKey": "AllowedBootstrapSshCidr", 
