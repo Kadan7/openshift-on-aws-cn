@@ -36,6 +36,10 @@
       "ParameterValue": "sg-0169ab8a58ad5f532" 
     },
     {
+      "ParameterKey": "AssociatePublicIpAddress", 
+      "ParameterValue": "true" 
+    },
+    {
       "ParameterKey": "IgnitionLocation", 
       "ParameterValue": "https://api-int.myocpcluster.awsose.cc:22623/config/master" 
     },
