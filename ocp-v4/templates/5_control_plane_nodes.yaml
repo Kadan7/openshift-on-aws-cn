@@ -73,6 +73,13 @@ Parameters:
     - "no"
     Description: Do you want to invoke NLB registration, which requires a Lambda ARN parameter?
     Type: String
+  AssociatePublicIpAddress:
+    Default: "false"
+    AllowedValues:
+    - "true"
+    - "false"
+    Description: Do you want to auto assign a public IP address to your master node?
+    Type: String  
   RegisterNlbIpTargetsLambdaArn:
     Description: ARN for NLB IP target registration lambda. Supply the value from the cluster infrastructure or select "no" for AutoRegisterELB.
     Type: String
@@ -110,6 +117,7 @@ Metadata:
       - Master0Subnet
       - Master1Subnet
       - Master2Subnet
+      - AssociatePublicIpAddress
     - Label:
         default: "DNS"
       Parameters:
@@ -139,6 +147,8 @@ Metadata:
         default: "Master Instance Type"
       MasterInstanceProfileName:
         default: "Master Instance Profile Name"
+      AssociatePublicIpAddress:
+        default: "false"
       RhcosAmi:
         default: "Red Hat Enterprise Linux CoreOS AMI ID"
       BootstrapIgnitionLocation:
@@ -173,7 +183,7 @@ Resources:
       IamInstanceProfile: !Ref MasterInstanceProfileName
       InstanceType: !Ref MasterInstanceType
       NetworkInterfaces:
-      - AssociatePublicIpAddress: "false"
+      - AssociatePublicIpAddress: !Ref AssociatePublicIpAddress
         DeviceIndex: "0"
         GroupSet:
         - !Ref "MasterSecurityGroupId"
@@ -225,7 +235,7 @@ Resources:
       IamInstanceProfile: !Ref MasterInstanceProfileName
       InstanceType: !Ref MasterInstanceType
       NetworkInterfaces:
-      - AssociatePublicIpAddress: "false"
+      - AssociatePublicIpAddress: !Ref AssociatePublicIpAddress
         DeviceIndex: "0"
         GroupSet:
         - !Ref "MasterSecurityGroupId"
@@ -277,7 +287,7 @@ Resources:
       IamInstanceProfile: !Ref MasterInstanceProfileName
       InstanceType: !Ref MasterInstanceType
       NetworkInterfaces:
-      - AssociatePublicIpAddress: "false"
+      - AssociatePublicIpAddress: !Ref AssociatePublicIpAddress
         DeviceIndex: "0"
         GroupSet:
         - !Ref "MasterSecurityGroupId"
